@@ -1,0 +1,39 @@
+### Obtener productos por id
+
+GET http://localhost:8000/bp/products/2
+
+### Obtener productos con limite
+
+GET http://localhost:8000/bp/products?limit=2
+
+### Crear producto
+
+POST http://localhost:8000/bp/products/
+
+{
+    "code": "TC02",
+    "name": "Tarjeta de Crédito",
+    "description": "Es una línea de crédito proporcionada por el banco que te permite realizar compras a crédito",
+    "logo": "",
+    "release_date": "2023-09-27T00:00:00.000Z",
+    "review_date": "2023-10-27T00:00:00.000Z",
+    "state": true
+}
+
+### Actualizar Producto
+
+PUT http://localhost:8000/bp/products/2
+
+{
+    "code": "TC02",
+    "name": "Tarjeta de Crédito",
+    "description": "Es una línea de crédito proporcionada por el banco que te permite realizar compras a crédito",
+    "logo": "",
+    "release_date": "2023-09-27T00:00:00.000Z",
+    "review_date": "2023-10-27T00:00:00.000Z",
+    "state": true
+}
+
+### Eliminar Producto
+
+DELETE http://localhost:8000/bp/products/2

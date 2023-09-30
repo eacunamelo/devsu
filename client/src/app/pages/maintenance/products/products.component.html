@@ -1,0 +1,52 @@
+<div class="form-container">
+    <form class="form-inner-container" autocomplete="off" [formGroup]="productForm" (ngSubmit)="saveProduct()">
+        <div class="combined-columns">
+            <h1><strong>Formulario Registro</strong></h1>
+        </div>
+
+        <div class="form-group">
+            <span for="code"><strong>Código</strong> </span>
+            <input class="form-input" type="text" id="code" name="code" placeholder="Escribe un código"
+                formControlName="code"
+                [ngClass]="{'invalid-field': productForm.get('code')?.invalid && productForm.get('code')?.touched}">
+        </div>
+        <div class="form-group">
+            <span for="name"><strong>Nombre</strong></span>
+            <input class="form-input" type="text" id="name" name="name" placeholder="Escribe nombre del producto"
+                formControlName="name"
+                [ngClass]="{'invalid-field': productForm.get('name')?.invalid && productForm.get('name')?.touched}">
+        </div>
+        <div class="form-group">
+            <span for="description"><strong>Descripción</strong></span>
+            <input class="form-input" type="text" id="description" name="description"
+                placeholder="Escribe una descripción" formControlName="description"
+                [ngClass]="{'invalid-field': productForm.get('description')?.invalid && productForm.get('description')?.touched}">
+        </div>
+        <div class="form-group">
+            <span for="logo"><strong>Logo</strong></span>
+            <input class="form-input" type="text" id="logo" name="logo" placeholder="Escribe un logo"
+                formControlName="logo"
+                [ngClass]="{'invalid-field': productForm.get('logo')?.invalid && productForm.get('logo')?.touched}">
+        </div>
+        <div class="form-group">
+            <span for="release_date"><strong>Fecha Liberación</strong></span>
+            <input class="form-input" type="date" id="release_date" name="release_date" formControlName="release_date"
+                [ngClass]="{'invalid-field': productForm.get('release_date')?.invalid && productForm.get('release_date')?.touched}"
+                (change)="onReleaseDateChange($event)">
+        </div>
+        <div class="form-group">
+            <span for="review_date"><strong>Fecha Revisión</strong></span>
+            <input class="form-input" type="date" id="review_date" name="review_date" formControlName="review_date"
+                [ngClass]="{'invalid-field': productForm.get('review_date')?.invalid && productForm.get('review_date')?.touched}">
+        </div>
+
+        <div class="container-buttons">
+            <div>
+                <a class="clean-product-button" type="submit"  (click)="clean()"><strong>Reiniciar</strong></a>
+            </div>
+            <div>
+                <button class="register-product-button" type="submit"><strong>Enviar</strong></button>
+            </div>
+        </div>
+    </form>
+</div>

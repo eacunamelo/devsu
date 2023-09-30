@@ -1,0 +1,67 @@
+<div class="container">
+    <div class="inner-container-head">
+        <div class="search-box">
+            <input class="search-input" type="text" placeholder="Search..." [(ngModel)]="valueSearch"
+                (change)="searchChange()">
+        </div>
+
+        <div class="">
+            <button class="add-product-button" (click)="detailView()">
+                Agregar
+            </button>
+        </div>
+    </div>
+
+    <div class="inner-container">
+        <table>
+            <thead>
+                <tr>
+                    <th [ngStyle]="{ 'width': '10%' }">Logo</th>
+                    <th [ngStyle]="{ 'width': '15%' }">Nombre del Producto</th>
+                    <th [ngStyle]="{ 'width': '35%' }">Descripción</th>
+                    <th [ngStyle]="{ 'width': '20%' }">Fecha de liberación</th>
+                    <th [ngStyle]="{ 'width': '20%'}">Fecha de reestructuración</th>
+                    <th [ngStyle]="{ 'width': '5%'}">Estado</th>
+                    <th> </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let product of products">
+                    <td>{{ product.logo }}</td>
+                    <td>{{ product.name }}</td>
+                    <td>{{ product.description }}</td>
+                    <td>{{ product.release_date | date: 'dd-MM-yyyy' }}</td>
+                    <td>{{ product.review_date | date: 'dd-MM-yyyy' }}</td>
+                    <td>{{ product.state == true ? 'Activo' : 'Eliminado'}}</td>
+                    <td>
+                        <div class="dropdown">
+                            <button class="dropdown-toggle">&#8942;</button>
+                            <div class="dropdown-content">
+                              <a (click)="editProduct(product)">Editar</a>
+                              <!-- <a (click)="deleteProduct(product.id)">Elimiar</a> -->
+                              <a (click)="openModal(product)">Elimiar</a>
+                            </div>
+                          </div>
+                    </td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td>
+                        {{ records }} <strong>Resultados</strong>
+                    </td>
+                    <td colspan="5">
+                        <select class="records" (change)="getProductsLimitedTo($event)">
+                            <option value="5">5</option>
+                            <option value="10">10</option>
+                            <option value="20">20</option>
+                        </select>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</div>
+
+<app-modal *ngIf="showModal" (closeModal)="closeModal()" [productSelected]="productSelected"></app-modal>
+

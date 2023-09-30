@@ -1,0 +1,173 @@
+.container {
+    max-width: 1300px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #f2f6f6;
+    padding: 75px 20px 20px 20px;
+}
+
+.inner-container {
+    max-width: 100%;
+    width: 95%;
+    margin: auto;
+    padding: 10px;
+    background-color: white;
+    border: 0.5px;
+}
+
+.inner-container-head {
+    display: flex;
+    align-items: center;
+    margin-right: 30px;
+}
+
+.add-product-button {
+    background-color: #f9de4b;
+    border-radius: 5px;
+    width: 77px;
+    height: 37px;
+    text-align: center;
+}
+
+.search-box {
+    max-width: 100%;
+    width: 95%;
+    margin: auto;
+    padding: 10px;
+}
+
+.search-input {
+    display: block;
+    width: 20%;
+    height: 40px;
+    background-color: white;
+    border: 0.5px solid #ced4da;
+    border-radius: 0.25rem;
+    transition: border 0.3s;
+    padding: 10px;
+    margin: 10px;
+}
+
+.search-input:focus {
+    border: 1px solid #999;
+    outline-width: 2px;
+}
+
+/* Estilos para la tabla */
+table {
+    width: 100%;
+    border-collapse: separate;
+    margin-bottom: 20px;
+    border-spacing: 0;
+}
+
+/* Estilos para las celdas de encabezado */
+th {
+    background-color: #f9fafc;
+    padding: 10px;
+    text-align: center;
+    font-weight: 550;
+    border-bottom: 2px solid #ddd;
+}
+
+/* Estilos para las celdas de datos (filas impares) */
+tr:nth-child(odd) {
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+}
+
+tr:nth-child(even) {
+    background-color: #fff;
+    border-bottom: 1px solid #ddd; 
+}
+
+/* Estilos para la última fila de datos */
+tr:last-child {
+    background-color: transparent;
+}
+
+/* Estilos para todas las celdas */
+td {
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+    font-weight: normal;
+}
+
+/* Alinea el contenido del pie de la tabla a la derecha */
+tfoot td {
+    text-align: right !important;
+    border-bottom: none; 
+}
+
+@media screen and (max-width: 600px) {
+
+    .search-input {
+        width: 35%;
+    }
+
+    thead {
+      display: none;
+    }
+  
+    tr {
+      margin-bottom: 10px;
+      display: block;
+      border: 1px solid #ddd;
+    }
+  
+    td {
+      display: block;
+      text-align: left;
+      border-bottom: none;
+    }
+}
+
+
+.records {
+    width: 5%;
+    height: 26px;
+    border: 0.5px solid #ced4da;
+    border-radius: 0.25rem;
+    transition: border 0.3s;
+    text-align: center;
+}
+
+/* Estilo del botón del dropdown */
+.dropdown-toggle {
+    padding: 10px 20px;
+    cursor: pointer;
+}
+  
+/* Estilo del contenido del dropdown */
+.dropdown-content {
+display: none;
+position: absolute;
+background-color: #f9f9f9;
+min-width: 160px;
+box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+/* Estilo de los enlaces en el contenido del dropdown */
+.dropdown-content a {
+padding: 12px 16px;
+display: block;
+color: #333;
+text-decoration: none;
+}
+
+/* Cambia el color del enlace al pasar el ratón */
+.dropdown-content a:hover {
+background-color: #f9de4b;
+color: #fff;
+}
+
+/* Muestra el contenido del dropdown al pasar el ratón sobre el botón */
+.dropdown:hover .dropdown-content {
+display: block;
+}

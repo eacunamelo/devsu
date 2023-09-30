@@ -1,0 +1,19 @@
+.header {
+  max-width: 1300px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 0;
+}
+
+.logo {
+  max-width: 200px; 
+  max-height: 100px;
+  overflow: hidden; 
+}
+
+.logo img {
+  max-width: 100%; 
+  height: auto; 
+}

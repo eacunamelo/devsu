@@ -1,0 +1,12 @@
+<div class="modal">
+  <div class="modal-content">
+      <div class="container">
+        <p>Estas seguro que deseas eliminar el producto {{ productSelected?.name }}?</p>
+      </div>
+
+      <div class="footer-button">
+        <button class="container-button-cancelar" (click)="closeModal.emit()">Cancelar</button>
+        <button class="container-button-confirmar" (click)="deleteProduct(productSelected?.id)">Confirmar</button>
+      </div>
+    </div>
+</div>
